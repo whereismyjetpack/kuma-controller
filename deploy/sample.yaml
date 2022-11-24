@@ -1,0 +1,8 @@
+apiVersion: jetpack.io/v1alpha1
+kind: UptimeKumaHttpMonitor
+metadata:
+  name: sample
+spec:
+  url: https://psu.edu
+  interval: 90
+  name: 'Penn State'
