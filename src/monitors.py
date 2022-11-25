@@ -2,6 +2,7 @@ from uptime_kuma_api import UptimeKumaApi, MonitorType
 from config import KumaConfig
 import logging
 
+
 def monitor_data(body):
     api = UptimeKumaApi(KumaConfig.url)
     api.login(KumaConfig.username, KumaConfig.password)
@@ -17,20 +18,20 @@ def monitor_data(body):
     request_body = {
         "type": monitor_type,
         "name": spec.get("name", body.get("metadata").get("name")),
-        "accepted_statuscodes": [str(s) for s in spec.get('accepted_statuscodes')],
-        "interval": spec.get('interval'),
-        "upsideDown": spec.get('upsideDown'),
-        "resendInterval": spec.get('resendInterval'),
-        "keyword": spec.get('keyword'),
-        "maxretries": spec.get('maxretries'),
-        "maxredirects": spec.get('maxredirects'),
-        "retryInterval": spec.get('retryInterval'),
-        "expiryNotification": spec.get('expiryNotification'),
-        "url": spec.get('url'),
-        "ignoreTls": spec.get('ignoreTls'),
-        "method": spec.get('method'),
-        "body": spec.get('body'),
-        "headers": spec.get('headers')
+        "accepted_statuscodes": [str(s) for s in spec.get("accepted_statuscodes")],
+        "interval": spec.get("interval"),
+        "upsideDown": spec.get("upsideDown"),
+        "resendInterval": spec.get("resendInterval"),
+        "keyword": spec.get("keyword"),
+        "maxretries": spec.get("maxretries"),
+        "maxredirects": spec.get("maxredirects"),
+        "retryInterval": spec.get("retryInterval"),
+        "expiryNotification": spec.get("expiryNotification"),
+        "url": spec.get("url"),
+        "ignoreTls": spec.get("ignoreTls"),
+        "method": spec.get("method"),
+        "body": spec.get("body"),
+        "headers": spec.get("headers"),
     }
 
     if spec.get("defaultNotifiers"):
@@ -55,7 +56,3 @@ def monitor_data(body):
     request_body["notificationIDList"] = notification_ids
 
     return request_body
- 
-
-
-
