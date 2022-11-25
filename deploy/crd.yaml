@@ -23,6 +23,42 @@ spec:
             spec:
               type: object
               properties:
+                headers:
+                  type: string
+                  default: null
+                body: 
+                  type: string
+                  default: null
+                method:
+                  type: string
+                  default: "GET"
+                accepted_statuscodes:
+                  type: array
+                  default: [200-299]
+                  items:
+                    x-kubernetes-int-or-string: true
+                ignoreTls:
+                  type: boolean
+                  default: false
+                expiryNotification:
+                  type: boolean
+                  default: false
+                maxretries:
+                  type: integer
+                  default: 0
+                retryInterval:
+                  type: integer
+                  default: 60
+                  description: Seconds Between retries
+                defaultNotifiers:
+                  type: boolean
+                  default: true
+                  description: "Also add the default Notifier for this monitor"
+                notifiers:
+                  type: array
+                  items:
+                    type: string
+                  description: List of Notifiers to notify
                 name:
                   type: string
                   description: Friendly Name of the Monitor

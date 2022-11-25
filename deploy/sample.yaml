@@ -3,6 +3,18 @@ kind: UptimeKumaHttpMonitor
 metadata:
   name: sample
 spec:
+  body: |
+    { 
+    "hi": mom
+    }
+  accepted_statuscodes:
+  - 100
+  expiryNotification: true
+  maxretries: 2
+  retryInterval: 20
+  defaultNotifiers: true
+  notifiers:
+  - ntfy
   url: https://psu.edu
   interval: 90
   name: 'Penn State'
