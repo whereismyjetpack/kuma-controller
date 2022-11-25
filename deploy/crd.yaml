@@ -23,6 +23,12 @@ spec:
             spec:
               type: object
               properties:
+                resendInterval:
+                  type: integer
+                  default: 0
+                upsideDown:
+                  type: boolean
+                  default: false
                 keyword:
                   type: string
                   default: null
@@ -46,6 +52,9 @@ spec:
                 expiryNotification:
                   type: boolean
                   default: false
+                maxRedirects:
+                  type: integer
+                  default: 10
                 maxretries:
                   type: integer
                   default: 0
