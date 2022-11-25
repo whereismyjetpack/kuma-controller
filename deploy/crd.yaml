@@ -60,6 +60,7 @@ spec:
                   default: 0
                 retryInterval:
                   type: integer
+                  minimum: 20
                   default: 60
                   description: Seconds Between retries
                 defaultNotifiers:
@@ -76,6 +77,7 @@ spec:
                   description: Friendly Name of the Monitor
                 interval:
                   type: integer
+                  minimum: 20
                   default: 60
                   description: Interval in seconds for the HTTP monitor
                 url:
