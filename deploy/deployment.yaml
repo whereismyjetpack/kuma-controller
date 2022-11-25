@@ -18,6 +18,9 @@ spec:
       serviceAccountName: kuma-controller
       containers:
       - name: kuma-controller
+        envFrom:
+        - secretRef:
+            name: kuma-controller
         image: harbor.k8s.libraries.psu.edu/library/kuma-operator:latest
         command:
         - sleep
