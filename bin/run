@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kopf run src/kuma_controller.py
