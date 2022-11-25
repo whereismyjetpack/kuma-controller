@@ -35,7 +35,7 @@ def create_fn(body, **kwargs):
         "resendInterval": spec.get('resendInterval'),
         "keyword": spec.get('keyword'),
         "maxretries": spec.get('maxretries'),
-        "maxRedirects": spec.get('maxRedirects'),
+        "maxredirects": spec.get('maxredirects'),
         "retryInterval": spec.get('retryInterval'),
         "expiryNotification": spec.get('expiryNotification'),
         "url": spec.get('url'),
