@@ -21,12 +21,17 @@ def create_fn(body, **kwargs):
     notification_ids = []
     notifications = api.get_notifications()
     spec = body.get("spec")
+    if spec.get('keyword'):
+        monitor_type = MonitorType.KEYWORD
+    else:
+        monitor_type = MonitorType.HTTP
 
     request_body = {
-        "type": MonitorType.HTTP,
+        "type": monitor_type,
         "name": spec.get("name", body.get("metadata").get("name")),
-        "accepted_statuscodes": str(spec.get('accepted_statuscodes')),
+        "accepted_statuscodes": [str(s) for s in spec.get('accepted_statuscodes')],
         "interval": spec.get('interval'),
+        "keyword": spec.get('keyword'),
         "maxretries": spec.get('maxretries'),
         "retryInterval": spec.get('retryInterval'),
         "expiryNotification": spec.get('expiryNotification'),
