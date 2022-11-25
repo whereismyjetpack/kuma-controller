@@ -1,14 +1,9 @@
 apiVersion: jetpack.io/v1alpha1
 kind: UptimeKumaHttpMonitor
 metadata:
-  name: sample
+  name: sample-three
 spec:
-  body: |
-    { 
-    "hi": mom
-    }
-  accepted_statuscodes:
-  - 100
+  keyword: Penn
   expiryNotification: true
   maxretries: 2
   retryInterval: 20
