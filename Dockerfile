@@ -10,3 +10,5 @@ ENV PATH=/home/app/.local/bin:$PATH
 COPY requirements.txt /app
 RUN pip install --user -r requirements.txt
 COPY --chown=app . /app
+
+CMD ["kopf", "run", "src/kuma_controller.py"]
