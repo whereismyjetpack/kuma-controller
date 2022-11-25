@@ -43,7 +43,7 @@ spec:
                   default: "GET"
                 accepted_statuscodes:
                   type: array
-                  default: 200-299
+                  default: [200-299]
                   items:
                     x-kubernetes-int-or-string: true
                 ignoreTls:
@@ -52,7 +52,7 @@ spec:
                 expiryNotification:
                   type: boolean
                   default: false
-                maxRedirects:
+                maxredirects:
                   type: integer
                   default: 10
                 maxretries:
